@@ -9,7 +9,7 @@ def api_root(request, format=None):
     if request.method == 'POST':
         return Response({"message": "POST request received"}, status=status.HTTP_201_CREATED)
 
-    base_url = 'http://localhost:8000/'
+    base_url = 'https://vigilant-sniffle-xqxwjqq7wq92v7wv-8000.app.github.dev/' if 'vigilant-sniffle-xqxwjqq7wq92v7wv' in request.get_host() else 'http://localhost:8000/'
     return Response({
         'users': base_url + 'api/users/?format=api',
         'teams': base_url + 'api/teams/?format=api',
